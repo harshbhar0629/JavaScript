@@ -25,3 +25,18 @@
 
 // let mp = filtered.map((val) => ({ value: val }));
 // console.log(mp);
+
+
+// filter give you an output which satisfy your cindition
+let arr = [1, -4, 2, -3, 5, 5, 5, 3];
+// let output = arr.filter((val) => {
+//     return val > 0;
+// });
+
+// console.log(output);
+
+//  reduce
+let output = arr.reduce((acc, val) => {
+    return acc + val
+}, 0);
+console.log(output);

@@ -9,3 +9,10 @@ let { courseName: cNm } = course;
 console.log(cNm);
 // console.log(courseName); invalid anonymous error
 
+
+function f() {
+    let username = "harsh";
+    console.log(this.username);
+}
+
+f();

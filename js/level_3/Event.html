@@ -1,0 +1,57 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Event</title>
+	</head>
+	<body style="width: 100vw; height: 100vh; overflow-x: hidden; box-sizing: border-box; margin: 0; padding: 0;">
+		<div
+			style="
+				position: relative;
+				background-color: #212121;
+				width: 100vw;
+				height: 100vh;
+				color: white;
+				text-align: center;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			">
+			Hello jii
+		</div>
+	</body>
+
+	<script>
+
+        // what we can via event
+        /**
+         * type timeStamp defaultEvent 
+         * traget toEle, srcEle, currTarget
+         * screenx, screenY, clientX, clientY
+         * altKey, ctrlKey, shiftKey, keycode
+         * 
+        */
+
+		const div = document.querySelector("div");
+
+		const newEl = document.createElement("p");
+		newEl.style.height = "10px";
+		newEl.style.width = "10px";
+		newEl.style.backgroundColor = "red";
+		newEl.style.position = "absolute";
+		newEl.style.borderRadius = "50%";
+
+		div.addEventListener("click", (event) => {
+			console.log(event);
+			newEl.style.top = `${event.y}px`;
+			newEl.style.left = `${event.x}px`;
+			document.body.appendChild(newEl);
+			console.log(div);
+		});
+	</script>
+</html>

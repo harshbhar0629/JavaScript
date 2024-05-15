@@ -38,8 +38,8 @@ function levelUp() {
     // change text of h2
     h2.innerHTML = `Level ${level}`;
 
-    let randomIdx = Math.floor(Math.random() * 3);
-    let btnColor = btns[randomIdx];
+    let randomIdx = Math.floor(Math.random() * 14);
+    let btnColor = btns[randomIdx%4];
     let btn = document.querySelector(`.${btnColor}`);
     btnFlash(btn);
     // console.log(btn);

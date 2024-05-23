@@ -9,7 +9,7 @@ html{
 body{
     background-color: rgb(182, 176, 206);
     display: flex;
-    height: 100vh;
+    height: 95vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;

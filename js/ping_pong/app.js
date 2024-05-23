@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	let cnt = 1;
 	let paddleY = 0; // handle the paddle in this ping-pong-game
 	const scr = document.querySelector("p");
-	let speed = 12;
-    let dPy = 8; //displacement for paddle in y-direction
+	let speed = 10;
+    let dPy = 10; //displacement for paddle in y-direction
 
 	btn.innerHTML = "Start Game";
 	btn.classList.add("active");

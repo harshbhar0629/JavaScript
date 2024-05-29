@@ -28,6 +28,7 @@ body {
 }
 
 .container {
+    margin-top: 40px;
     width: 327px;
     position: absolute;
     top: 50%;

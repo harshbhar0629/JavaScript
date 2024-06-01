@@ -6,6 +6,7 @@ body {
     height: 100vh;
     background-color: antiquewhite;
     text-align: center;
+    overflow-y: hidden;
 }
 
 #game-arena {

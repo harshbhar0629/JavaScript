@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const isHittingLeftWall = snake[0].x < 0;
         const isHittingTopWall = snake[0].y < 0;
         const isHittingRightWall = snake[0].x >= 800 - cellSize/2;
-        const isHittingDownWall = snake[0].y >= 500 + cellSize/2 ;
+        const isHittingDownWall = snake[0].y >= 600 + cellSize/2 ;
 
         return isHittingDownWall || isHittingLeftWall || isHittingRightWall || isHittingTopWall; // game over
 

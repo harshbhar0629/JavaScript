@@ -1,3 +1,5 @@
+/** @format */
+
 // console.log("Hello jiii")
 // let newPro = new Promise(function (resolve, reject) {
 //     // console.log("Successfully Resolve");
@@ -16,17 +18,16 @@
 //     console.log(error);
 // });
 
-
 function saveToDb(data) {
-    return new Promise((resolve, reject) => {
-        let speed = Math.floor(Math.random() * 11);
-        if (speed > 4) {
-            resolve("Succesfull");
-        }
-        else {
-            reject("Mere Mrji m nhi kr rha accept");
-        }
-    });
+	return new Promise((resolve, reject) => {
+		let speed = Math.floor(Math.random() * 11);
+		console.log(speed);
+		if (speed > 4) {
+			resolve("Succesfull");
+		} else {
+			reject("Mere Mrji m nhi kr rha accept");
+		}
+	});
 }
 
 // simple promise
@@ -40,16 +41,18 @@ function saveToDb(data) {
 //         console.log("Promise rejected",error);
 //     })
 
-
-// promise chaining 
+// promise chaining
 saveToDb("harsh bhardwaj")
-    .then((val) => {
-        console.log("Sucessfully complete");
-        return saveToDb("new promise");
-    })
-    .then((value) => {
-        console.log("Promise2 resolved");
-    })
-    .catch((error) => {
-        console.log("Promise rejected");
-    })
+	.then((val) => {
+		console.log(val);
+		console.log("Sucessfully complete");
+		return saveToDb("new promise");
+	})
+	.then((value) => {
+		console.log(value);
+		console.log("Promise2 resolved");
+	})
+	.catch((error) => {
+		console.log(error);
+		console.log("Promise rejected");
+	});

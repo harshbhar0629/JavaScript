@@ -1,0 +1,128 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<!-- <link
+			rel="stylesheet"
+			href="./index.css" /> -->
+		<style>
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+
+			.image-container {
+				height: 100vh;
+				width: 100vw;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.image {
+				width: 200px;
+				height: 200px;
+				margin: 10px;
+				background-color: gray;
+				border: 2px solid transparent;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border-radius: 10px;
+			}
+
+			.image.active {
+				border-color: red;
+			}
+
+			span {
+				font-size: 40px;
+				font-weight: bolder;
+				color: rgb(241, 187, 70);
+			}
+		</style>
+		<title>Circular linkedlist</title>
+	</head>
+	<body style="background-color: rgb(158, 165, 165)">
+		<div class="image-container">
+			<div
+				class="image"
+				id="img1">
+				<span>1</span>
+			</div>
+			<div
+				class="image"
+				id="img2">
+				<span>2</span>
+			</div>
+			<div
+				class="image"
+				id="img3">
+				<span>3</span>
+			</div>
+			<div
+				class="image"
+				id="img4">
+				<span>4</span>
+			</div>
+			<div
+				class="image"
+				id="img5">
+				<span>5</span>
+			</div>
+		</div>
+	</body>
+	<!-- <script src="./app.js"></script> -->
+	<script>
+
+		let idx = 0;
+		let imgs = document.querySelectorAll(".image");
+		let len = imgs.length;
+		let timer;
+
+		document.addEventListener("keydown", (e) => {
+			e.preventDefault();
+			if (e.key !== "ArrowRight") return;
+			imgs[idx].classList.remove("active");
+			idx = (idx + 1) % len;
+			imgs[idx].classList.add("active");
+			resetTimer();
+		});
+
+		function resetTimer() {
+			clearTimeout(timer);
+			timer = setTimeout(shiftImages, 2000);
+		}
+
+		function shiftImages() {
+			let curr = imgs[idx];
+			let newImg = [];
+			console.log(idx);
+			console.log(curr);
+			console.log(newImg);
+			newImg.push(curr);
+			for (let img of imgs) {
+				if (img === curr) {
+					continue;
+				}
+				newImg.push(img);
+			}
+			console.log(newImg);
+			idx = 0;
+			imgs = newImg;
+			imgs.forEach((img) => img.classList.remove("active"));
+
+			let all = document.querySelector(".image-container");
+			all.children = "";
+			for (let img of imgs) {
+				all.appendChild(img);
+			}
+		}
+	</script>
+</html>
